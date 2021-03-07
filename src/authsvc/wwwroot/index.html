@@ -1,0 +1,34 @@
+{{#raw}}
+<div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <router-link class="navbar-brand" to="/" exact="">
+                authsvc
+            </router-link>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <router-link tag="li" class="nav-item" to="/" exact>
+                        <a class="nav-link">Home</a>
+                    </router-link>
+                    <router-link tag="li" class="nav-item" to="/about">
+                        <a class="nav-link">About</a>
+                    </router-link>
+                    <router-link v-if="!isAuthenticated" tag="li" class="nav-item" to="/login">
+                        <a class="nav-link">Sign In</a>
+                    </router-link>
+                    <router-link v-if="!isAuthenticated" tag="li" class="nav-item" to="/signup">
+                        <a class="nav-link">Sign Up</a>
+                    </router-link>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row p-4">
+            <div id="content">
+                <router-view></router-view>
+            </div>
+        </div>
+    </div>
+</div>
+{{/raw}}
